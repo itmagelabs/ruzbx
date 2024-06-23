@@ -1,0 +1,15 @@
+---
+version: '3'
+services:
+  jira:
+    restart: always
+    image: atlassian/jira-software
+    environment: {}
+      # JVM_SUPPORT_RECOMMENDED_ARGS: "-Datlassian.recovery.password=<PASSWORD>"
+    ports:
+      - 8080:8080
+    volumes:
+      - 'data:/var/atlassian/application-data/jira'
+
+volumes:
+  data:
